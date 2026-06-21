@@ -13,15 +13,15 @@ export default function Menu() {
     activeTab === "all" ? menuItems : menuItems.filter((item) => item.category === activeTab);
 
   return (
-    <section id="menu" className="bg-light-gray px-6 py-24 sm:py-32">
+    <section id="menu" className="bg-light-gray/50 px-6 py-24 sm:py-32">
       <div className="mx-auto max-w-5xl">
         <div className="flex items-center gap-4">
-          <div className="h-1 w-16 rounded-full bg-mustard-yellow" />
+          <div className="h-1 w-16 rounded-full bg-light-gray" />
           <span className="text-xs font-semibold uppercase tracking-widest text-muted-purple">
             Menu
           </span>
         </div>
-        <h2 className="mt-4 text-3xl font-bold tracking-tight text-dark-charcoal sm:text-4xl">
+        <h2 className="mt-4 text-3xl font-bold tracking-tight text-muted-purple sm:text-4xl">
           What we brew.
         </h2>
 
@@ -32,8 +32,8 @@ export default function Menu() {
               onClick={() => setActiveTab(tab)}
               className={`rounded-full px-5 py-2 text-sm font-semibold capitalize transition-all ${
                 activeTab === tab
-                  ? "bg-mustard-yellow text-dark-charcoal shadow-lg shadow-mustard-yellow/20"
-                  : "bg-white text-warm-gray hover:text-muted-purple"
+                  ? "bg-muted-purple text-white shadow-lg shadow-muted-purple/20"
+                  : "bg-white text-muted-purple/70 hover:text-muted-purple"
               }`}
             >
               {tab}
@@ -53,12 +53,11 @@ export default function Menu() {
                 transition={{ duration: 0.2 }}
                 className="group relative rounded-2xl bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
               >
-                <div className="absolute bottom-0 left-0 h-1 w-0 rounded-full bg-mustard-yellow transition-all group-hover:w-full" />
                 <div className="flex items-start justify-between">
                   <h3 className="text-lg font-semibold text-muted-purple">{item.name}</h3>
-                  <span className="text-sm font-bold text-mustard-yellow">{item.price}</span>
+                  <span className="text-sm font-bold text-light-purple">{item.price}</span>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-warm-gray">
+                <p className="mt-2 text-sm leading-relaxed text-muted-purple/70">
                   {item.description}
                 </p>
               </motion.div>
@@ -67,7 +66,7 @@ export default function Menu() {
         </div>
 
         {filtered.length === 0 && (
-          <p className="mt-10 text-center text-warm-gray">No items in this category yet.</p>
+          <p className="mt-10 text-center text-muted-purple/50">No items in this category yet.</p>
         )}
       </div>
     </section>

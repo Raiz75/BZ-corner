@@ -23,18 +23,18 @@ const features = [
 
 export default function Ambiance() {
   return (
-    <section id="vibe" className="bg-dark-charcoal px-6 py-24 sm:py-32">
+    <section id="vibe" className="bg-light-purple px-6 py-24 sm:py-32">
       <div className="mx-auto max-w-5xl">
         <div className="flex items-center gap-4">
-          <div className="h-1 w-16 rounded-full bg-mustard-yellow" />
-          <span className="text-xs font-semibold uppercase tracking-widest text-mustard-yellow">
+          <div className="h-1 w-16 rounded-full bg-white/30" />
+          <span className="text-xs font-semibold uppercase tracking-widest text-white/80">
             The Vibe
           </span>
         </div>
-        <h2 className="mt-4 text-3xl font-bold tracking-tight text-off-white sm:text-4xl">
+        <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
           More than just coffee.
         </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-warm-beige sm:text-lg">
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
           Warm lighting, curated playlists, and a space that invites you to stay a little
           longer. Every corner of BZ is made for slow mornings and good company.
         </p>
@@ -43,11 +43,11 @@ export default function Ambiance() {
           {features.map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border border-warm-beige/10 bg-white/5 p-6 transition-all hover:-translate-y-1 hover:border-mustard-yellow/30 hover:bg-white/10"
+              className="rounded-xl border border-white/10 bg-white/5 p-6 transition-all hover:-translate-y-1 hover:border-white/30 hover:bg-white/10"
             >
               <span className="text-3xl">{item.icon}</span>
-              <h3 className="mt-4 text-base font-semibold text-off-white">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-warm-beige/80">
+              <h3 className="mt-4 text-base font-semibold text-white">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">
                 {item.description}
               </p>
             </div>

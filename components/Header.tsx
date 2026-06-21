@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
@@ -12,10 +12,17 @@ const links = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const lastScroll = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 50);
+      setHidden(y > 100 && y > lastScroll.current);
+      lastScroll.current = y;
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -28,20 +35,22 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-dark-charcoal/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+        hidden ? "-translate-y-full" : "translate-y-0"
+      } ${
+        scrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="text-xl font-extrabold tracking-tight text-light-purple">
+        <a href="#" className="text-xl font-extrabold tracking-tight text-muted-purple">
           BZ CORNER
         </a>
 
-        <ul className="hidden items-center gap-8 text-sm font-medium text-warm-beige md:flex">
+        <ul className="hidden items-center gap-8 text-sm font-medium text-muted-purple/70 md:flex">
           {links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="transition-colors hover:text-mustard-yellow"
+                className="transition-colors hover:text-light-purple"
               >
                 {link.label}
               </a>
@@ -56,15 +65,15 @@ export default function Header() {
         >
           <motion.span
             animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            className="h-0.5 w-6 bg-off-white"
+            className="h-0.5 w-6 bg-muted-purple"
           />
           <motion.span
             animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="h-0.5 w-6 bg-off-white"
+            className="h-0.5 w-6 bg-muted-purple"
           />
           <motion.span
             animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            className="h-0.5 w-6 bg-off-white"
+            className="h-0.5 w-6 bg-muted-purple"
           />
         </button>
       </nav>
@@ -75,9 +84,9 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 flex items-center justify-center bg-dark-charcoal/95 backdrop-blur-lg"
+            className="fixed top-0 left-0 z-40 flex h-dvh w-full items-center justify-center bg-muted-purple/95 backdrop-blur-lg"
           >
-            <ul className="flex flex-col items-center gap-8 text-2xl font-bold text-off-white">
+            <ul className="flex flex-col items-center gap-8 text-2xl font-bold text-white">
               {links.map((link) => (
                 <motion.li
                   key={link.href}
@@ -88,7 +97,7 @@ export default function Header() {
                   <a
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="transition-colors hover:text-mustard-yellow"
+                    className="transition-colors hover:text-white/70"
                   >
                     {link.label}
                   </a>
