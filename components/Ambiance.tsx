@@ -23,8 +23,12 @@ const features = [
 
 export default function Ambiance() {
   return (
-    <section id="vibe" className="bg-light-purple px-6 py-24 sm:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="vibe" className="relative overflow-hidden bg-light-purple px-6 py-24 sm:py-32">
+      <div className="pointer-events-none absolute -right-48 -top-48 h-[600px] w-[600px] rounded-full border border-white/15 bg-white/5" />
+      <div className="pointer-events-none absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-white/10" />
+      <div className="pointer-events-none absolute top-1/3 right-1/4 h-32 w-32 rounded-full bg-muted-purple/15" />
+
+      <div className="relative mx-auto max-w-5xl">
         <div className="flex items-center gap-4">
           <div className="h-1 w-16 rounded-full bg-white/30" />
           <span className="text-xs font-semibold uppercase tracking-widest text-white/80">

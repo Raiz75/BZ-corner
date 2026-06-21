@@ -29,8 +29,11 @@ const images = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="bg-white px-6 py-24 sm:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="gallery" className="relative overflow-hidden bg-white px-6 py-24 sm:py-32">
+      <div className="pointer-events-none absolute -left-40 top-1/4 h-[450px] w-[450px] rounded-full border border-muted-purple/10 bg-muted-purple/5" />
+      <div className="pointer-events-none absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-light-purple/10" />
+
+      <div className="relative mx-auto max-w-5xl">
         <div className="flex items-center gap-4">
           <div className="h-1 w-16 rounded-full bg-mustard-yellow" />
           <span className="text-xs font-semibold uppercase tracking-widest text-muted-purple">

@@ -1,7 +1,10 @@
 export default function Location() {
   return (
-    <section id="visit" className="bg-light-gray/50 px-6 py-24 sm:py-32">
-      <div className="mx-auto max-w-3xl">
+    <section id="visit" className="relative overflow-hidden bg-light-gray/50 px-6 py-24 sm:py-32">
+      <div className="pointer-events-none absolute -left-32 -top-32 h-[400px] w-[400px] rounded-full border border-muted-purple/10 bg-muted-purple/5" />
+      <div className="pointer-events-none absolute -bottom-16 right-1/4 h-48 w-48 rounded-full bg-muted-purple/10" />
+
+      <div className="relative mx-auto max-w-3xl">
         <div className="flex items-center gap-4">
           <div className="h-1 w-16 rounded-full bg-mustard-yellow" />
           <span className="text-xs font-semibold uppercase tracking-widest text-muted-purple">

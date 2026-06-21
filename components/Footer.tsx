@@ -15,8 +15,11 @@ export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="relative bg-muted-purple px-6 py-16">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
+    <footer className="relative overflow-hidden bg-muted-purple px-6 py-16">
+      <div className="pointer-events-none absolute -right-48 -bottom-48 h-[500px] w-[500px] rounded-full border border-white/10 bg-white/5" />
+      <div className="pointer-events-none absolute -left-20 top-1/3 h-40 w-40 rounded-full bg-white/10" />
+
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
         <div>
           <p className="text-xl font-extrabold tracking-tight text-white">
             BZ CORNER

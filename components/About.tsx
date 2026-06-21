@@ -1,7 +1,10 @@
 export default function About() {
   return (
-    <section id="story" className="bg-white px-6 py-24 sm:py-32">
-      <div className="mx-auto max-w-3xl">
+    <section id="story" className="relative overflow-hidden bg-white px-6 py-24 sm:py-32">
+      <div className="pointer-events-none absolute -top-32 -right-32 h-[400px] w-[400px] rounded-full border border-muted-purple/10 bg-muted-purple/5" />
+      <div className="pointer-events-none absolute -bottom-20 -left-20 h-[250px] w-[250px] rounded-full bg-light-purple/10" />
+
+      <div className="relative mx-auto max-w-3xl">
         <div className="flex items-center gap-4">
           <div className="h-1 w-16 rounded-full bg-mustard-yellow" />
           <span className="text-xs font-semibold uppercase tracking-widest text-muted-purple">
