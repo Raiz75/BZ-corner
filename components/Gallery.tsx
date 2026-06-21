@@ -32,7 +32,7 @@ export default function Gallery() {
     <section id="gallery" className="bg-white px-6 py-24 sm:py-32">
       <div className="mx-auto max-w-5xl">
         <div className="flex items-center gap-4">
-          <div className="h-1 w-16 rounded-full bg-light-gray" />
+          <div className="h-1 w-16 rounded-full bg-mustard-yellow" />
           <span className="text-xs font-semibold uppercase tracking-widest text-muted-purple">
             The Space
           </span>

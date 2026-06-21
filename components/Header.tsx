@@ -50,7 +50,7 @@ export default function Header() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="transition-colors hover:text-light-purple"
+                className="transition-colors hover:text-mustard-yellow"
               >
                 {link.label}
               </a>
@@ -97,7 +97,7 @@ export default function Header() {
                   <a
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="transition-colors hover:text-white/70"
+                    className="transition-colors hover:text-mustard-yellow"
                   >
                     {link.label}
                   </a>

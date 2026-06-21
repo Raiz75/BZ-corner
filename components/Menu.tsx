@@ -16,7 +16,7 @@ export default function Menu() {
     <section id="menu" className="bg-light-gray/50 px-6 py-24 sm:py-32">
       <div className="mx-auto max-w-5xl">
         <div className="flex items-center gap-4">
-          <div className="h-1 w-16 rounded-full bg-light-gray" />
+          <div className="h-1 w-16 rounded-full bg-mustard-yellow" />
           <span className="text-xs font-semibold uppercase tracking-widest text-muted-purple">
             Menu
           </span>
@@ -32,7 +32,7 @@ export default function Menu() {
               onClick={() => setActiveTab(tab)}
               className={`rounded-full px-5 py-2 text-sm font-semibold capitalize transition-all ${
                 activeTab === tab
-                  ? "bg-muted-purple text-white shadow-lg shadow-muted-purple/20"
+                  ? "bg-mustard-yellow text-muted-purple shadow-lg shadow-mustard-yellow/20"
                   : "bg-white text-muted-purple/70 hover:text-muted-purple"
               }`}
             >
@@ -55,7 +55,7 @@ export default function Menu() {
               >
                 <div className="flex items-start justify-between">
                   <h3 className="text-lg font-semibold text-muted-purple">{item.name}</h3>
-                  <span className="text-sm font-bold text-light-purple">{item.price}</span>
+                  <span className="text-sm font-bold text-mustard-yellow">{item.price}</span>
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-muted-purple/70">
                   {item.description}
