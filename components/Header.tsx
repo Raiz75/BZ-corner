@@ -41,11 +41,11 @@ export default function Header() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="text-xl font-extrabold tracking-tight text-muted-purple">
+        <a href="#" className={`text-xl font-extrabold tracking-tight ${scrolled ? "text-muted-purple" : "text-white"}`}>
           BZ CORNER
         </a>
 
-        <ul className="hidden items-center gap-8 text-sm font-medium text-muted-purple/70 md:flex">
+        <ul className={`hidden items-center gap-8 text-sm font-medium md:flex ${scrolled ? "text-muted-purple/70" : "text-white/70"}`}>
           {links.map((link) => (
             <li key={link.href}>
               <a
@@ -65,15 +65,15 @@ export default function Header() {
         >
           <motion.span
             animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            className="h-0.5 w-6 bg-muted-purple"
+            className={`h-0.5 w-6 ${scrolled ? "bg-muted-purple" : "bg-white"}`}
           />
           <motion.span
             animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="h-0.5 w-6 bg-muted-purple"
+            className={`h-0.5 w-6 ${scrolled ? "bg-muted-purple" : "bg-white"}`}
           />
           <motion.span
             animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            className="h-0.5 w-6 bg-muted-purple"
+            className={`h-0.5 w-6 ${scrolled ? "bg-muted-purple" : "bg-white"}`}
           />
         </button>
       </nav>
@@ -84,9 +84,9 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed top-0 left-0 z-40 flex h-dvh w-full items-center justify-center bg-muted-purple/95 backdrop-blur-lg"
+            className="fixed top-0 left-0 z-40 flex h-dvh w-full items-center justify-center bg-light-gray/70 backdrop-blur-lg"
           >
-            <ul className="flex flex-col items-center gap-8 text-2xl font-bold text-white">
+            <ul className="flex flex-col items-center gap-8 text-2xl font-bold text-muted-purple">
               {links.map((link) => (
                 <motion.li
                   key={link.href}
